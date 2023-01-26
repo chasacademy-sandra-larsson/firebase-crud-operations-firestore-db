@@ -13,7 +13,8 @@
     doc,
     getDoc,
     updateDoc,
-  } from 'firebase/firestore/lite';
+  } from 'firebase/firestore';
+// eller from 'firebase/firestore/'; men då kommer inte onSnapshot med
 
 
  // Your web app's Firebase configuration
