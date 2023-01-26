@@ -1,32 +1,32 @@
+ // Import the functions you need from the SDKs you need
+ import { initializeApp } from 'firebase/app';
+ // TODO: Add SDKs for Firebase products that you want to use
+ // https://firebase.google.com/docs/web/setup#available-libraries
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js"; //from "firebase/app";
-// CDN from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
-// Mer om Cloud Firestore och dokumentation av funktioner => https://firebase.google.com/docs/firestore
+ import {
+    getFirestore,
+    collection,
+    getDocs,
+    onSnapshot,
+    addDoc,
+    deleteDoc,
+    doc,
+    getDoc,
+    updateDoc,
+  } from 'firebase/firestore/lite';
 
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  onSnapshot,
-  addDoc,
-  deleteDoc,
-  doc,
-  getDoc,
-  updateDoc,
-} from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
 
-//from 'firebase/firestore';
-// CDN from 
+ // Your web app's Firebase configuration
+ const firebaseConfig = {
+   // Din config som du hittar i din registrerade app på Firebase Console
+ };
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
- // CREDENTIALS
-};
 
-// Initialize Firebase
-export const app = initializeApp(firebaseConfig);
+ // Initialize Firebase
+ const app = initializeApp(firebaseConfig);
 
-export const db = getFirestore();
+ const db = getFirestore();
+
 
 /*Obs! Här används colletion "task" - se till att du skapar en ny collection med 
 * samma namn Firebase console -> Build -> Firestore Database -> Start collection
@@ -70,3 +70,7 @@ export const updateTask = (id, newFields) =>
  * Hämtar alla uppgifter
  */
 export const getTasks = () => getDocs(collection(db, "tasks"));
+
+
+
+
